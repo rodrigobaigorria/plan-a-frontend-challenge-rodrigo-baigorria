@@ -1,0 +1,50 @@
+ion-content {
+  --background: linear-gradient(#172f77, #7f9bd1);
+}
+
+ion-card {
+  background: rgb(0, 0, 0, 0.5);
+}
+
+ion-card-header {
+  color: #fff;
+}
+
+ion-card-content a,
+b,
+p {
+  color: #fff;
+}
+
+.bg {
+  --background: rgb(0, 0, 0, 0);
+  color: #fff;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg img {
+  border-radius: 10%;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.formButton {
+  margin-top: 20px;
+}
+.errors {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 5%;
+  width: 90%;
+  background-color: #7f9bd1;
+  color: rgb(235, 229, 229);
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}

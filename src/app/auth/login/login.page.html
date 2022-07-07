@@ -1,0 +1,59 @@
+<ion-content>
+  <ion-row>
+    <ion-col size-lg="3" size-md="3" size-sm="0" size-xs="0">
+    </ion-col>
+    <ion-col size-lg="6" size-md="6">
+      <ion-card class="scroll">
+        <ion-card-header>
+          <ion-item size-lg="6" size-md="6" class="bg">
+            <img src="https://planatechnologies.com/wp-content/uploads/2020/01/Plan-A-Technologies-Light-2.svg">
+
+          </ion-item>
+          <ion-item class="bg">
+
+            <ion-label>
+              <h1> Plan A Challenge </h1>
+            </ion-label>
+          </ion-item>
+
+        </ion-card-header>
+        <span class="errors"
+          *ngIf="isSubmited && loginFormGroup.get('email').hasError('required') && (loginFormGroup.get('email').touched || loginFormGroup.get('email').dirty)">
+          *Email is required.
+        </span>
+        <span class="errors"
+          *ngIf="isSubmited && loginFormGroup.get('email').hasError('email') && (loginFormGroup.get('email').touched || loginFormGroup.get('email').dirty)">
+          *Please enter a valid email.
+        </span>
+        <span class="errors"
+          *ngIf="isSubmited && loginFormGroup.get('password').hasError('required') && (loginFormGroup.get('password').touched || loginFormGroup.get('password').dirty)">
+          *Password is required.
+        </span>
+        <span class="errors" *ngIf="isSubmited && loginFormGroup.get('password').hasError('minlength')">
+          *Password should be min 6 chars long.
+        </span>
+        <ion-card-content>
+          <form [formGroup]="loginFormGroup" (ngSubmit)="login(flogin)" #flogin="ngForm" autocomplete="off">
+            <ion-list no-line>
+              <ion-item>
+                <ion-icon name="mail-outline" slot="start"></ion-icon>
+                <ion-input autocomplete="off" type="email" placeholder="Email" name="email" formControlName="email" required
+                  autocomplete="false">
+                </ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+                <ion-input autocomplete="off" type="password" placeholder="Password" name="password" formControlName="password" required>
+                </ion-input>
+              </ion-item>
+            </ion-list>
+            <ion-button type="submit" expand="block" fill="solid" class="formButton" color="light">
+              Ingresar
+            </ion-button>
+          </form>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-content>
