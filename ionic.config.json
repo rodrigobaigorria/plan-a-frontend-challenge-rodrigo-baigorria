@@ -1,5 +1,7 @@
 {
   "name": "planAChallenge",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
