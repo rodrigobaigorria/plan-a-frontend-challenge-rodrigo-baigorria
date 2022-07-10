@@ -17,10 +17,10 @@ export class LoginPage {
 
   isSubmited = false;
   loginFormGroup = new FormGroup({
-    email: new FormControl('', [Validators.required, Validators.email]),
-    password: new FormControl('', [Validators.required, Validators.minLength(6)])
+    email: new FormControl('rodrigo@gmail.com', [Validators.required, Validators.email]),
+    password: new FormControl('123123', [Validators.required, Validators.minLength(6)])
   });
-
+  show: boolean = false;
   constructor(private usuarioService: UsuariosService,
               private router: Router,
               public alertController: AlertController
@@ -57,6 +57,11 @@ export class LoginPage {
 
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
+  }
+
+  changeVisibility(){
+    console.log('first;');
+    this.show = !this.show;
   }
 
 }
