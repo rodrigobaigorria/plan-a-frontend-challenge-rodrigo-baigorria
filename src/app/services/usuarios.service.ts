@@ -35,6 +35,7 @@ export class UsuariosService {
             if (resp['success']) {
               this.guardarToken(res['request_token']);
               resolve(true);
+              this.navCtrl.navigateRoot('/home');
             } else {
               this.token = null;
               resolve(false)

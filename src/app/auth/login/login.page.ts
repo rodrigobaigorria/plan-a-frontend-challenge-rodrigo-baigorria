@@ -10,6 +10,10 @@ import { UsuariosService } from '../../services/usuarios.service';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage {
+  dataUser = {
+    email: 'rodrigo@gmail.com',
+    password: '123123'
+  };
 
   isSubmited = false;
   loginFormGroup = new FormGroup({
@@ -24,9 +28,14 @@ export class LoginPage {
 
   async login(flogin: NgForm) {
     this.isSubmited = true;
-    if (flogin.invalid) { return; }
+    if (flogin.invalid) { return; };
+    if (this.loginFormGroup.controls.email.value !== this.dataUser.email ||
+         this.loginFormGroup.controls.password.value !== this.dataUser.password) {
+          this.presentAlert();
+    } else {
+      await this.usuarioService.login();
+    }
 
-    await this.usuarioService.login();
     /*console.log(isvalid);
      if (isvalid) {
       await this.router.navigate(['/home', { animated: true }]);
