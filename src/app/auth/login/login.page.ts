@@ -26,13 +26,13 @@ export class LoginPage {
     this.isSubmited = true;
     if (flogin.invalid) { return; }
 
-    const isvalid = await this.usuarioService.login();
-    console.log(isvalid);
-    if (isvalid) {
+    await this.usuarioService.login();
+    /*console.log(isvalid);
+     if (isvalid) {
       await this.router.navigate(['/home', { animated: true }]);
     } else {
       this.presentAlert();
-    }
+    } */
 
   }
 
