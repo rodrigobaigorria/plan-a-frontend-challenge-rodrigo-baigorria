@@ -4,7 +4,7 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { RouterTestingModule } from '@angular/router/testing';
 import { LoginPage } from './login.page';
 
-describe('Login Component', () => {
+fdescribe('Login Component', () => {
   let component: LoginPage;
   let httpMock: HttpTestingController;
 

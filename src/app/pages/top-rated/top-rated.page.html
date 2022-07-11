@@ -1,0 +1,17 @@
+<ion-content>
+  <div *ngIf="isCharge">
+
+    <ion-card *ngFor="let item of topArr.results">
+      <ion-card-header>
+        <ion-card-subtitle>Original Language: {{ item.original_language }}</ion-card-subtitle>
+        <ion-card-title> {{ item.original_title }}</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        {{ item.overview}}
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+
+</ion-content>

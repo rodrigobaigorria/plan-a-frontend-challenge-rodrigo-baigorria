@@ -15,7 +15,7 @@ const dataLogin =
     success: true
 	};
 
-fdescribe('UsuarioService', () => {
+describe('UsuarioService', () => {
 
   let service: UsuariosService;
   let httpMock: HttpTestingController;
